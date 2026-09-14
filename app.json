@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "CaloVision AI",
+    "slug": "calovision-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#090d16"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.calovision.app"
+    },
+    "android": {
+      "package": "com.calovision.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundColor": "#090d16"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Ứng dụng cần quyền truy cập thư viện ảnh để phân tích calo món ăn.",
+          "cameraPermission": "Ứng dụng cần quyền truy cập camera để chụp ảnh món ăn đo calo."
+        }
+      ]
+    ]
+  }
+}
