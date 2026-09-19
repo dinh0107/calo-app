@@ -4,11 +4,20 @@ import { Platform } from 'react-native';
 const TOKEN_KEY = 'calovision_jwt_token_v1';
 
 // Base API URL configuration
-const API_BASE_URL = Platform.select({
-  ios: 'http://127.0.0.1:5001/api',
-  android: 'http://10.0.2.2:5001/api',
-  default: 'http://localhost:5001/api',
-});
+export const getApiBaseUrl = (): string => {
+  const envUrl = process.env.EXPO_PUBLIC_API_URL?.trim();
+  if (envUrl) {
+    return envUrl.replace(/\/+$/, '');
+  }
+  return Platform.select({
+    ios: 'http://127.0.0.1:5001/api',
+    android: 'http://10.0.2.2:5001/api',
+    default: 'http://localhost:5001/api',
+  }) || 'http://localhost:5001/api';
+};
+
+export const API_BASE_URL = getApiBaseUrl();
+
 
 let cachedToken: string | null = null;
 
