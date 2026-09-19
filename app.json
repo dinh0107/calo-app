@@ -11,8 +11,8 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "vn.dinhduongvan.calovisionai",
-      "buildNumber": "1"
+      "bundleIdentifier": "vn.chmo.calovisionai",
+      "buildNumber": "2"
     },
     "android": {
       "package": "com.calovision.app",
